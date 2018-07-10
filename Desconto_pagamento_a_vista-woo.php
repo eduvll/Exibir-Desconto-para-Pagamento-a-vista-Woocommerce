@@ -15,7 +15,7 @@ function price_discount () {
 	$price = $product->get_price_including_tax();
 	$price_disc = $price * $desc;
 	$final_price = $price - $price_disc;
-	echo '<div class="price_disc_cash"><p>ou '.$currency.' '.$final_price.' para pagamento à vista</p></div>';
+	echo '<div class="price_disc_cash"><p>ou '.$currency.' '.number_format($final_price, 2, ',', '.').' para pagamento à vista</p></div>';
 }
 
 add_action ('ocean_after_single_product_price', 'price_discount');
